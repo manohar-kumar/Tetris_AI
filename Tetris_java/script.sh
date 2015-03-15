@@ -1,3 +1,5 @@
 #!/bin/sh
+java Test >testfile.txt
 value=$(cat testfile.txt)
-sed '/public static int[] myarr/s/public static int[] myarr.*/$value/g' State.java
+sed -i "s/public static int\[\] myarr.*/$value/g" State.java
+
